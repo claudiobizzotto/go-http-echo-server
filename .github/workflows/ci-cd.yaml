@@ -9,4 +9,5 @@ jobs:
       - name: build-docker-image
         uses: docker/build-push-action@v1
         with:
+          path: ../../
           tags: latest
