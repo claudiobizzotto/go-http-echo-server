@@ -21,5 +21,5 @@ jobs:
         run: |
           docker run -d -p 8080:8080 claudiobizzotto/go-http-echo-server
           docker ps
-          curl -i 127.0.0.1:8080 || echo "cURL: No response..."
+          curl -i --connect-timeout 5 --max-time 10 --retry 5 127.0.0.1:8080 || echo "cURL: No response..."
           wget -S http://127.0.0.1:8080
