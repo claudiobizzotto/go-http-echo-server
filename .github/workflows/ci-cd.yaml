@@ -6,6 +6,8 @@ jobs:
     name: build-and-run
     runs-on: ubuntu-latest
     steps:
+      - name: Check out the repo
+        uses: actions/checkout@master
       - name: build-docker-image
         uses: docker/build-push-action@v1
         with:
