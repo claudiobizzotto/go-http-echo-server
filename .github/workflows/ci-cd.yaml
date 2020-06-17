@@ -20,5 +20,5 @@ jobs:
         if: success()
         # uses: docker://claudiobizzotto/go-http-echo-server:latest
         run: |
-          docker run -d -p 8080:8080 go-http-echo-server
+          docker run -d -p 8080:8080 claudiobizzotto/go-http-echo-server
           curl -i http://localhost:8080/
