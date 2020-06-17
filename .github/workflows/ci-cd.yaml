@@ -1,8 +1,6 @@
 name: ci-cd
 on: [push]
 
-# See also: https://github.com/marketplace/actions/the-docker-cli
-
 jobs:
   build-and-run:
     name: build-and-run
@@ -20,9 +18,8 @@ jobs:
           tags: latest
       - name: run-docker-container
         if: success()
-        # uses: docker://claudiobizzotto/go-http-echo-server:latest
         run: |
           docker run -d -p 8080:8080 claudiobizzotto/go-http-echo-server
           docker ps
-          curl -i 127.0.0.1:8080 || echo "No response"
-          wget -S -O /dev/null http://127.0.0.1:8080
+          curl -i 127.0.0.1:8080 || echo "cURL: No response..."
+          wget -S http://127.0.0.1:8080
