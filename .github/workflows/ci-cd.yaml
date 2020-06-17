@@ -6,10 +6,12 @@ jobs:
     name: build-and-run
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
+      - name: checkout
         uses: actions/checkout@master
       - name: build-docker-image
         uses: docker/build-push-action@v1
         with:
-          # path: ../../
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: claudiobizzotto/go-http-echo-server
           tags: latest
