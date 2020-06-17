@@ -1,0 +1,12 @@
+name: ci-cd
+on: [push]
+
+jobs:
+  build-and-run:
+    name: build-and-run
+    runs-on: ubuntu-latest
+    steps:
+      - name: build-docker-image
+        uses: docker/build-push-action@v1
+        with:
+          tags: latest
