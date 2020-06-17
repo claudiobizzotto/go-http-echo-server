@@ -1,8 +1,8 @@
+![](https://github.com/claudiobizzotto/go-http-echo-server/workflows/ci-cd/badge.svg)
+
 # Golang HTTP Echo Server
 
 The dumbest HTTP server you can find. Send a request and have it echoed back to you.
-
-![](https://github.com/claudiobizzotto/go-http-echo-server/workflows/ci-cd/badge.svg)
 
 ## Usage
 
